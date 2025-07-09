@@ -1,83 +1,173 @@
+body {
+  margin: 0;
+  background: white;
+  font-family: 'Fredoka', sans-serif;
+  background-repeat: repeat;
+  color: #333;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Fredoka', sans-serif;
-      background: linear-gradient(135deg, #a8e6ff 0%, #ffffff 100%) url('images/pattern-cartoon.png');
-      background-repeat: repeat;
-      color: #333;
-    }
-    header {
-      background: rgba(	0, 153, 204);
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .logo {
-      max-height: 100px;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      color: #00b3ff;
-      text-shadow: 2px 2px #fff;
-      animation: fadeInUp 1s ease forwards;
-    }
-    .hero h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2em;
-      color: #444;
-    }
-    .catalogo {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .cover {
-      background: rgb(0, 187, 255);
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .cover:hover {
-      transform: translateY(-5px) scale(1.03);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-    .cover img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-    .cover h3 {
-      font-size: 1.2em;
-      color: #ff6b00;
-      margin-bottom: 8px;
-    }
-    .cover p {
-      font-size: 0.95em;
-    }
-    .cover .prezzo {
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #222;
-      margin-top: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(255,255,255,0.9);
-      font-size: 0.9em;
-      color: #555;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
- 
+header {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  position: relative; /* necessario per posizionare la search bar */
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra il logo */
+  padding: 0 20px;
+  position: relative;
+}
+
+.logo {
+  max-height: 100px;
+  margin: 0 auto; /* centra il logo */
+  display: block;
+}
+
+.search-container {
+  position: absolute; /* posiziona fuori dal flusso normale */
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+#searchBar {
+  padding: 8px 12px;
+  border: 2px solid #00b3ff;
+  border-radius: 8px;
+  font-size: 1em;
+  width: 200px;
+  transition: border-color 0.3s ease;
+}
+
+#searchBar:focus {
+  border-color: #0099cc;
+  outline: none;
+}
+
+/* resto del CSS invariato */
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  color: #00b3ff;
+  animation: fadeInUp 1s ease forwards;
+}
+.hero h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.2em;
+  color: #444;
+}
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 16px 28px;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05);
+}
+.lello {
+  text-align: center;
+  padding: 100px 60px;
+  color: #00b3ff;
+  animation: fadeInUp 1s ease forwards;
+}
+.lello h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.cover {
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cover:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.cover img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.cover h3 {
+  font-size: 1.2em;
+  color: #ff6b00;
+  margin-bottom: 8px;
+}
+.cover p {
+  font-size: 0.95em;
+}
+.cover .prezzo {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #222;
+  margin-top: 10px;
+}
+
+.banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.banner {
+  background: rgb(0, 187, 255);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.banner img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255,255,255,0.9);
+  font-size: 0.9em;
+  color: #555;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
