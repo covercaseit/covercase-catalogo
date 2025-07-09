@@ -60,7 +60,7 @@ header.shrink .logo {
 .hero {
   text-align: center;
   padding: 60px 20px;
-  color: #00b3ff;
+  color: white;
   animation: fadeInUp 1s ease forwards;
 }
 
