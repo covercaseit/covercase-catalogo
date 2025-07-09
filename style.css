@@ -2,7 +2,6 @@ body {
   margin: 0;
   background: white;
   font-family: 'Fredoka', sans-serif;
-  background-repeat: repeat;
   color: #333;
 }
 
@@ -13,7 +12,12 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  position: relative; /* necessario per posizionare la search bar */
+  transition: all 0.3s ease;
+}
+
+header.shrink {
+  padding: 5px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .header-content {
@@ -21,22 +25,20 @@ header {
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: center; /* centra il logo */
+  justify-content: space-between;
   padding: 0 20px;
-  position: relative;
 }
 
 .logo {
-  max-height: 100px;
-  margin: 0 auto; /* centra il logo */
-  display: block;
+  max-height: 80px;
+  transition: max-height 0.3s ease;
+}
+
+header.shrink .logo {
+  max-height: 50px;
 }
 
 .search-container {
-  position: absolute; /* posiziona fuori dal flusso normale */
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
 }
@@ -55,22 +57,23 @@ header {
   outline: none;
 }
 
-/* resto del CSS invariato */
-
 .hero {
   text-align: center;
   padding: 60px 20px;
   color: #00b3ff;
   animation: fadeInUp 1s ease forwards;
 }
+
 .hero h1 {
   font-size: 2em;
   margin-bottom: 20px;
 }
+
 .hero p {
   font-size: 1.2em;
   color: #444;
 }
+
 .whatsapp-btn {
   display: inline-block;
   background-color: #25D366;
@@ -83,20 +86,12 @@ header {
   margin-top: 30px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .whatsapp-btn:hover {
   background-color: #1ebe5d;
   transform: scale(1.05);
 }
-.lello {
-  text-align: center;
-  padding: 100px 60px;
-  color: #00b3ff;
-  animation: fadeInUp 1s ease forwards;
-}
-.lello h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
+
 .catalogo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -105,31 +100,37 @@ header {
   max-width: 1200px;
   margin: auto;
 }
+
 .cover {
-  background: rgb(255, 255, 255);
+  background: rgb(0, 187, 255);
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .cover:hover {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
+
 .cover img {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 15px;
 }
+
 .cover h3 {
   font-size: 1.2em;
   color: #ff6b00;
   margin-bottom: 8px;
 }
+
 .cover p {
   font-size: 0.95em;
 }
+
 .cover .prezzo {
   font-size: 1.1em;
   font-weight: bold;
@@ -138,25 +139,20 @@ header {
 }
 
 .banner {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 40px 20px;
   max-width: 1200px;
-  margin: auto;
+  margin: 40px auto;
+  padding: 0 20px;
 }
-.banner {
-  background: rgb(0, 187, 255);
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+
 .banner img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
+  border-radius: 16px;
+}
+
+.lello {
+  text-align: center;
+  padding: 60px 20px;
+  color: #00b3ff;
 }
 
 footer {
@@ -170,4 +166,20 @@ footer {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo {
+    max-height: 60px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #searchBar {
+    width: 100%;
+  }
 }
