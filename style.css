@@ -1,84 +1,83 @@
-/* Reset base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f5f5f5;
-    color: #333;
-  }
-  
-  /* Header con logo fisso */
-  header {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .logo {
-    height: 120px;
-    object-fit: contain;
-  }
-  
-  /* Titolo catalogo */
-  main h1 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    color: #222;
-  }
-  
-  /* Sezione cover */
-  .catalogo {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 0 20px 40px;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  .cover {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .cover:hover {
-    transform: scale(1.05);
-  }
-  
-  .cover img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
-  }
-  
-  .cover h3 {
-    font-size: 1.2em;
-    margin-bottom: 8px;
-  }
-  
-  .cover p {
-    font-size: 0.95em;
-    color: #555;
-  }
-  
-  .cover .prezzo {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #222;
-    margin-top: 10px;
-  }
-  
+
+    body {
+      margin: 0;
+      font-family: 'Fredoka', sans-serif;
+      background: linear-gradient(135deg, #a8e6ff 0%, #ffffff 100%) url('images/pattern-cartoon.png');
+      background-repeat: repeat;
+      color: #333;
+    }
+    header {
+      background: rgba(	0, 153, 204);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .logo {
+      max-height: 100px;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      color: #00b3ff;
+      text-shadow: 2px 2px #fff;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .hero h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color: #444;
+    }
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .cover {
+      background: rgb(0, 187, 255);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cover:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .cover img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .cover h3 {
+      font-size: 1.2em;
+      color: #ff6b00;
+      margin-bottom: 8px;
+    }
+    .cover p {
+      font-size: 0.95em;
+    }
+    .cover .prezzo {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #222;
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      font-size: 0.9em;
+      color: #555;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+ 
